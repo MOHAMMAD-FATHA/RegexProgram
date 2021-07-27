@@ -9,6 +9,7 @@ public class regex {
 		UserRegistration userRegistration = new UserRegistration();
 		userRegistration.firstName();
 		userRegistration.lastName();
+		userRegistration.email();
 
 	}
 }
@@ -38,6 +39,19 @@ public void lastName(){
         System.out.println("thank you");
     } else {
         System.out.println("please enter valid last name ");
+    }
+
+}
+//User's Email Address
+public void email(){
+    sc = new Scanner(System.in);
+    System.out.print("Enter email ID :: " );
+    String Email = sc.next();
+    Boolean answer = Pattern.matches("^[a-zA-Z0-9+_!#$%&’*+/=?`{|}~^.-]+@[a-zA-Z0-9.-]+$",Email);
+    if (answer){
+        System.out.println("thank you");
+    } else {
+        System.out.println("please enter valid email ID ");
     }
 
 }
