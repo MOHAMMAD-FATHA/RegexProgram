@@ -3,21 +3,6 @@ package RegexJava;
 import java.util.Scanner;
 import java.util.regex.Pattern;
 
-public class regex {
-
-	public static void main(String[] args) {
-		UserRegistration userRegistration = new UserRegistration();
-		userRegistration.firstName();
-		userRegistration.lastName();
-		userRegistration.email();
-		userRegistration.contactNumber();
-		userRegistration.password1();
-		userRegistration.password2();
-		userRegistration.password3();
-		userRegistration.password4();
-		}
-}
-
 class UserRegistration {
 	Scanner sc;
 //User's First Name
@@ -123,4 +108,35 @@ public void password4(){
         System.out.println("enter valid password");
     }
 }
+public void emailValidation(){
+    // Validate the given email IDs in sheet 
+        sc = new Scanner(System.in);
+        System.out.print("Enter email ID :: " );
+        String Email = sc.next();
+        Boolean answer = Pattern.matches("[a-zA-Z0-9_.]*[-]*[+]*[a-zA-Z0-9]*@[a-zA-Z0-9]+([.][a-zA-Z]+)+",Email);
+    if (answer){
+        System.out.println("Thank you");
+    }else {
+        System.out.println("enter valid password");
+    }
+
 }
+}
+
+//Driver Program
+public class regex {
+
+	public static void main(String[] args) {
+		UserRegistration userRegistration = new UserRegistration();
+		userRegistration.firstName();
+		userRegistration.lastName();
+		userRegistration.email();
+		userRegistration.contactNumber();
+		userRegistration.password1();
+		userRegistration.password2();
+		userRegistration.password3();
+		userRegistration.password4();
+		userRegistration.emailValidation();
+		}
+}
+
