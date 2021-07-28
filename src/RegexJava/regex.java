@@ -12,6 +12,7 @@ public class regex {
 		userRegistration.email();
 		userRegistration.contactNumber();
 		userRegistration.password1();
+		userRegistration.password2();
 	}
 }
 
@@ -76,6 +77,19 @@ public void password1(){
     System.out.print("Enter password  :: " );
     String password = sc.nextLine();
     boolean answer = Pattern.matches("[a-zA-Z0-9]{8,}",password);
+    if (answer){
+        System.out.println("Thank you");
+    }else {
+        System.out.println("enter valid password");
+    }
+}
+
+public void password2(){
+    // rule1 = minimum 8 characters & atleast 1 upper case
+    sc = new Scanner(System.in);
+    System.out.print("Enter password  :: " );
+    String password = sc.nextLine();
+    boolean answer = Pattern.matches("[A-Z]+[a-z]{7,}",password);
     if (answer){
         System.out.println("Thank you");
     }else {
