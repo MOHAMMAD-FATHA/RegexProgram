@@ -7,10 +7,10 @@ public class regex {
 
 	public static void main(String[] args) {
 		UserRegistration userRegistration = new UserRegistration();
-		userRegistration.firstName();
-		userRegistration.lastName();
-		userRegistration.email();
-
+//		userRegistration.firstName();
+//		userRegistration.lastName();
+//		userRegistration.email();
+		userRegistration.contactNumber();
 	}
 }
 
@@ -52,6 +52,19 @@ public void email(){
         System.out.println("thank you");
     } else {
         System.out.println("please enter valid email ID ");
+    }
+
+}
+//User's Contact Number
+public void contactNumber(){
+    sc = new Scanner(System.in);
+    System.out.print("Enter contact number with country code :: " );
+    String ContactNumber = sc.nextLine();
+    boolean answer = Pattern.matches("91\\s[0-9]{10}",ContactNumber);
+    if (answer){
+        System.out.println("Thank you");
+    }else {
+        System.out.println("enter valid contact number");
     }
 
 }
